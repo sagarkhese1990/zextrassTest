@@ -1,0 +1,34 @@
+.btn{
+    &.btn-secondary{
+        background-color: $secondary-color;
+        color: $light-black;
+        border-color: $secondary-color;
+        &:hover, &:focus
+        &:active{
+            background-color: $secondary-color;
+            color: $light-black;
+            outline: none;
+           box-shadow: none;
+        }
+    }
+}
+
+.direction-btn{
+    .btn{
+        padding: 0;
+        font-size: 1.2rem;
+        color: $light-black;
+        width: 1.875rem;
+        height: 1.875rem;
+        background: $light-grey;
+        line-height: 1.875rem;
+        border-radius: 50%;
+        margin: 0 0.2rem;
+        text-align: center;
+        &:focus,
+        &:active{
+           outline: none;
+           box-shadow: none;
+        }
+    }
+}

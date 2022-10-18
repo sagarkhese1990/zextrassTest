@@ -1,0 +1,54 @@
+@import '../../../../../assets/styles/variable';
+.list-wrapper{
+    ul{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        justify-content: flex-start;
+        overflow: hidden;
+        overflow-x: auto;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        li{
+            width: 11.25rem;
+            min-width: 11.25rem;
+            padding: 0.875rem;
+            white-space: nowrap;
+            background: #f8f9fa;
+            border-radius: 0.5rem;
+            margin: 1rem;
+            .list-content{
+                .artist-title{
+                    font-size: 1rem;
+                    color: $text-color;
+                    text-transform: capitalize;
+                }
+            }
+            .sub-content{
+                font-size: 0.75rem;
+                color: $text-color;
+            }
+            .img-wrapper{
+                width: 9.375rem;
+                height: 9.375rem;
+                overflow: hidden;
+                border-radius: 0.25rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .audio-wrapper{
+                .btn{
+                    padding: 0;
+                    i{
+                        font-size: 1.7rem;
+                        line-height: 1.3rem;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}

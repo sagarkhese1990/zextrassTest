@@ -1,0 +1,38 @@
+<header class="header d-flex justify-content-between align-tems-center p-3">
+    <div class="search-box d-flex">
+        <div class="direction-btn">
+            <button class="btn btn-link">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="btn btn-link">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+        <form>
+            <div class="input-group mb-0">
+                <input type="text" class="form-control" (keyup)="search($event)" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <span class="input-group-text"> <i class="bi bi-search"></i></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm btn-menu" (click)="toggleMenu()">
+        <i class="bi bi-list"></i>
+    </button>
+    <div class="user-info d-flex">
+        
+        <button class="btn btn-secondary btn-sm mx-4">Upgrade</button>
+        <div class="profile-wrapper">
+            <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-link" id="profile" ngbDropdownToggle>
+                    <i class="bi bi-person-circle"></i> Robert Smith
+                </button>
+                <div ngbDropdownMenu aria-labelledby="profile">
+                    <button ngbDropdownItem>Profile</button>
+                    <button ngbDropdownItem>Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

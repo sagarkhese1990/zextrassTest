@@ -1,0 +1,49 @@
+<div class="music-list-wrapper my-4">
+    <div class="list-header d-flex justify-content-between align-items-center pt-2">
+        <h3 class="mb-0">{{inputParams.listTitle}}</h3>
+        <div class="direction-btn">
+            <button class="btn btn-link" (click)="goTo('prev')">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button class="btn btn-link" (click)="goTo('next')">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="list-wrapper">
+        <ul  #navigationTab>
+            <li *ngFor="let list of inputParams.data">
+                <div class="img-wrapper">
+                    <img [src]="convertBase64(list.base64Image)" [alt]="list.artist" />
+                </div>
+                <div class="list-content">
+                    <p class="artist-title my-2">{{list.album != '' ? list.album : list.artist}}</p>
+                    <ng-container *ngIf="inputParams.listType !== 'recentlyPlayed'">
+                        <div class="audio-wrapper d-flex justify-content-center align-items-center">
+                            <button class="btn btn-link audio-btn" *ngIf="list.id !== playedMusicId"
+                                (click)="playMusic(list.id)">
+                                <i class="bi bi-play-circle"></i>
+                            </button>
+                            <ng-container *ngIf="list.id === playedMusicId">
+                                <button class="btn btn-link audio-btn" (click)="stopMusic(list.id)">
+                                    <i class="bi bi-pause-circle"></i>
+                                </button>
+                                <div class="player w-100">
+                                    <ngb-progressbar type="success" [value]="elapsedTime" height=".5rem">
+                                    </ngb-progressbar>
+
+                                </div>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="inputParams.listType === 'recentlyPlayed'">
+                        <p class="sub-content mb-0"> {{list.artist}}</p>
+                        <p class="sub-content mb-0"> {{list.year != '' ? list.year : list.type}}</p>
+                    </ng-container>
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+</div>

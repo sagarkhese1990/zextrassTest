@@ -1,0 +1,114 @@
+html,body{
+    height: 100%;
+}
+body{
+    font-size: 16px;
+    overflow-x: hidden;
+    scrollbar-color: $primary-color #eee ;
+    scrollbar-width: thin;
+}
+.main-container{
+    .main-content{
+        padding-left: 12.5rem; 
+        @media screen and (max-width: 768px) {
+                padding-left:0 !important; 
+        }
+    }
+}
+h1{
+    font-size: 1.5rem;
+    color: $text-color;
+}
+h3{
+    font-size: 0.875rem;
+    color: $text-color;
+}
+ngb-progressbar{
+    background: #efefef;
+    border: 1px solid $text-color;
+    overflow: visible !important;
+    .bg-success{
+        background-color: $primary-color !important;
+        border-radius: 0.25rem;
+        overflow: visible;
+        height: 0.6rem;
+        position: relative;
+        top: -0.07rem;
+        left: 0;
+        border: -0.06rem solid $primary-color !important;
+       
+    }
+}
+app-header{
+    position: sticky;
+    top: 0;
+    .header{
+        background-color: $white;
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #eeeeee;
+    width: 5px;
+    height: 5px;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $primary-color;
+    border-radius: 20px;
+    border: 1px solid $primary-color;
+}
+
+.header {
+    .btn-menu{
+        display: none;
+    }
+    @media screen and (max-width:768px) {
+        .btn-menu{
+            display: block;
+        }
+        .search-box{
+            .direction-btn{
+                display: none;
+            }
+        }
+        .user-info{
+            display: none !important;
+        }
+    }
+}
+
+.sidenav-collapse{
+    .overlay{
+        display: block;
+        z-index: 1059;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        position: fixed;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    @media screen and (max-width: 768px) {
+        .sidenav{
+            left: 0  !important;
+            transition: all .3s;
+        }
+    }
+  
+}
+.overlay{
+    display: none;
+}
+.sidenav{
+    @media screen and (max-width: 768px) {
+        left: -100% !important;
+        transition: all .3s;
+    }
+}

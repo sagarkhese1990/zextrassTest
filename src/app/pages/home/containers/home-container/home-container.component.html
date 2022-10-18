@@ -1,0 +1,22 @@
+<div class="main-container">
+  <app-sidebar></app-sidebar>
+  <div class="main-content">
+    <app-header (headerOutputParams)="handleHeaderOuputParams($event)"></app-header>
+    <div class="page-container p-3">
+      <div class="row">
+        <div class="col">
+          <h1>Home</h1>
+        </div>
+      </div>
+      <div class="" *ngIf="smartListnerData.length">
+        <app-music-list [inputParams]="{listTitle: 'Smart Listner', listType: 'smartlistner', data: smartListnerData}" (outputParams)="handleOuputParams($event)"></app-music-list>
+      </div>
+      <div class="" *ngIf="recentlyPlayed.length">
+        <app-music-list [inputParams]="{listTitle: 'Recently Played', listType: 'recentlyPlayed', data: recentlyPlayed}" (outputParams)="handleOuputParams($event)"></app-music-list>
+      </div>
+      <div class="no-records-found" *ngIf="smartListnerData.length <=0 && recentlyPlayed.length <= 0">
+        <p> No Records Founds, Please try with another search filter</p>
+      </div>
+    </div>
+  </div>
+</div>

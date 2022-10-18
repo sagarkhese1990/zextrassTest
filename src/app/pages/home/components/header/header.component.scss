@@ -1,0 +1,30 @@
+.user-info{
+    .btn{
+        padding: 0.2rem 0.5rem;
+        &.btn-secondary{
+            min-width: 150px;
+        }
+        &:focus,
+        &.active{
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .profile-wrapper{
+        .dropdown-toggle{       
+            padding: 0;
+            color: #636363;  
+            text-decoration: none;
+            i{
+                font-size: 1.3rem;
+            }      
+            &:focus,
+            &.active{
+                outline: none;
+                box-shadow: none;
+                text-decoration: none;
+            }
+        }
+    }
+
+}

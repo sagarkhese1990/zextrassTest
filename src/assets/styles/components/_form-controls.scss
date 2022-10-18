@@ -1,0 +1,29 @@
+.form-control{
+    &:focus,
+    &.active{
+        outline: none;
+        box-shadow: none;
+        border-color: #ccc;
+    }
+}
+.search-box{
+    .input-group{
+        .form-control{
+            min-width: 18.75rem;
+           border-right:0 ;
+           padding: 0.2rem 0.5rem;
+           font-size: 0.875rem;
+           @media screen and (max-width: 768px) {
+                min-width: 16rem;
+            }
+        }
+        .input-group-append{
+            .input-group-text{
+                background: transparent;
+                border-left: 0;
+                border-radius: 0 0.25rem 0.25rem 0;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+    }
+}
